@@ -21,6 +21,8 @@ namespace Project.Core
                 EndingWith("Repository")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+            RegisterNavigationServiceAppStart<ViewModels.ChampionViewModel>();
         }
     }
 }

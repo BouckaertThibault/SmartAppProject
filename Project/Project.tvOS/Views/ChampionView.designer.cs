@@ -7,11 +7,12 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
+using UIKit;
 
 namespace Project.tvOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("ChampionView")]
+    partial class ChampionView
     {
         void ReleaseDesignerOutlets ()
         {
