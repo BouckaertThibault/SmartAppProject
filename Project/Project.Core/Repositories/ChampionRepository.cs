@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.IO;
+using MvvmCross.Plugins.File;
 
 namespace Project.Core.Repositories
 {
@@ -16,7 +17,8 @@ namespace Project.Core.Repositories
     {
         private const string _BASEURL = "https://euw1.api.riotgames.com/lol/static-data/v3/champions";
         private const string _API_KEY = "RGAPI-03bbb3ce-f67e-a1dd-9aa8-3579da119cfa";
-      
+
+        
 
         private HttpClient CreateHttpClient()
         {
@@ -30,14 +32,15 @@ namespace Project.Core.Repositories
         public List<Champion> GetChampions()
         {
             
+           
             try
             {
-                Debug.WriteLine("Lezen champions.json file...");
+                Debug.WriteLine("Kijken dat champions.json al bestaat...");
                 var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 var filename = Path.Combine(documents, "champions.json");
                 var text = File.ReadAllText(filename);
 
-                if(text == null)
+                if (text == null)
                 {
                     Debug.WriteLine("champions.json was leeg of bestaat niet, data ophalen en storen in file...");
                     using (HttpClient client = CreateHttpClient())
@@ -62,8 +65,8 @@ namespace Project.Core.Repositories
                 }
 
 
-               
-                
+
+
 
             }
             catch (Exception ex)
@@ -71,9 +74,7 @@ namespace Project.Core.Repositories
                 Debug.WriteLine(ex.Message);
                 return null;
             }
-
         }
-
 
 
         public ChampionDetail GetChampionById(int ID)

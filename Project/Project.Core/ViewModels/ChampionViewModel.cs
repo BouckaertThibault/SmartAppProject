@@ -49,8 +49,7 @@ namespace Project.Core.ViewModels
         }
 
 
-
-
+        
         private readonly IMvxNavigationService _navigationService;
         protected readonly IChampionDataService _championDataService;
         public ChampionViewModel(IChampionDataService championDataService, IMvxNavigationService navigationService)
@@ -58,6 +57,7 @@ namespace Project.Core.ViewModels
 
             this._championDataService = championDataService;
             this._navigationService = navigationService;
+           
 
             GetChampions();
 
@@ -104,6 +104,7 @@ namespace Project.Core.ViewModels
 
         }
 
+        public void ReadFile(string text) { }
 
 
     }

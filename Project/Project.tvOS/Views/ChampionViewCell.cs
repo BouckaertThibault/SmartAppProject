@@ -47,8 +47,8 @@ namespace Project.tvOS
                     {
                         TextColor = UIColor.Black,
                         TextAlignment = UITextAlignment.Center,
-                        Font = UIFont.SystemFontOfSize(20)
-
+                        Font = UIFont.SystemFontOfSize(25)
+                        
                     };
                 }
 
@@ -76,7 +76,7 @@ namespace Project.tvOS
            
 
             ImageView.Frame = new CGRect(0, 0, Frame.Width, Frame.Height);
-            NameLabel.Frame = new CGRect(0, 530, Frame.Width, 30);
+            NameLabel.Frame = new CGRect(0, 570, Frame.Width, 30);
 
 
         }
@@ -97,6 +97,31 @@ namespace Project.tvOS
             set.Bind(ImageView).For(iv => iv.Image).To(a => a.Image.LoadingScreenImage).WithConversion<StringToImageConverter>();
             set.Apply();
         }
+
+        public override void DidUpdateFocus(UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
+        {
+            var previousItem = context.PreviouslyFocusedView as ChampionViewCell;
+            if (previousItem != null)
+            {
+                Animate(0.5, () =>
+                {
+                    previousItem.NameLabel.Font = UIFont.SystemFontOfSize(25);
+                    previousItem.NameLabel.Frame = new CGRect(0, 570, Frame.Width, 30);
+                });
+            }
+
+            var nextItem = context.NextFocusedView as ChampionViewCell;
+            if (nextItem != null)
+            {
+                Animate(0.5, () =>
+                {
+                    nextItem.NameLabel.Font = UIFont.SystemFontOfSize(40);
+                    nextItem.NameLabel.Frame = new CGRect(0, 600, Frame.Width, 40);
+                });
+            }
+        }
+
+
 
     }
 }

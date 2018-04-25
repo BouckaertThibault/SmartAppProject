@@ -26,6 +26,7 @@ namespace Project.tvOS
                 base.ViewDidLoad();
                 _championViewSource = new ChampionViewSource(this.CollectionView);
                 NavigationItem.Title = "Champions";
+                
                 CollectionView.BackgroundColor = UIColor.White;
                 this.CollectionView.Source = _championViewSource;
                 this.CollectionView.ReloadData();
@@ -41,6 +42,7 @@ namespace Project.tvOS
             set.Apply();
             
         }
+
 
 
 
