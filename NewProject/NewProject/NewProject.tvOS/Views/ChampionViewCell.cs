@@ -1,13 +1,13 @@
 ﻿using CoreGraphics;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Binding.tvOS.Views;
+using MvvmCross.Platforms.Tvos.Binding.Views;
+using NewProject.tvOS.Converters;
 using Project.Core.Models;
-using Project.tvOS.Converters;
 using System;
 using UIKit;
 
-namespace Project.tvOS
+namespace NewProject.tvOS
 {
     public partial class ChampionViewCell : MvxCollectionViewCell
     {
@@ -27,7 +27,7 @@ namespace Project.tvOS
                     imageView = new UIImageView();
                     imageView.ContentMode = UIViewContentMode.ScaleAspectFill;
                     imageView.AdjustsImageWhenAncestorFocused = true;
-                    
+
                     //imageView.Layer.CornerRadius = 16;
                     //imageView.Layer.MasksToBounds = true;
                 }
@@ -48,7 +48,7 @@ namespace Project.tvOS
                         TextColor = UIColor.Black,
                         TextAlignment = UITextAlignment.Center,
                         Font = UIFont.SystemFontOfSize(25)
-                        
+
                     };
                 }
 
@@ -64,7 +64,7 @@ namespace Project.tvOS
         public ChampionViewCell(IntPtr handle) : base(handle)
         {
             SetupViews();
-            
+
         }
 
 
@@ -73,7 +73,7 @@ namespace Project.tvOS
         {
             AddSubview(ImageView);
             AddSubview(NameLabel);
-           
+
 
             ImageView.Frame = new CGRect(0, 0, Frame.Width, Frame.Height);
             NameLabel.Frame = new CGRect(0, 570, Frame.Width, 30);
@@ -98,11 +98,6 @@ namespace Project.tvOS
             set.Apply();
         }
 
-      
-
-        
-
-
         public override void DidUpdateFocus(UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
         {
             var previousItem = context.PreviouslyFocusedView as ChampionViewCell;
@@ -125,8 +120,6 @@ namespace Project.tvOS
                 });
             }
         }
-
-
 
     }
 }

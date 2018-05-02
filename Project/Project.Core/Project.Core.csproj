@@ -49,12 +49,6 @@
     <Reference Include="MvvmCross.Platform.Wpf, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Platform.5.7.0\lib\net45\MvvmCross.Platform.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Plugins.File, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Plugin.File.5.7.0\lib\net45\MvvmCross.Plugins.File.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Plugins.File.Wpf, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Plugin.File.5.7.0\lib\net45\MvvmCross.Plugins.File.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="MvvmCross.Wpf, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Core.5.7.0\lib\net45\MvvmCross.Wpf.dll</HintPath>
     </Reference>
@@ -79,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Models\ChampionDetailImage.cs" />
     <Compile Include="Models\ChampionDetailPassive.cs" />
     <Compile Include="Models\ChampionDetailPassiveImage.cs" />
@@ -96,6 +89,7 @@
     <Compile Include="Services\ChampionDataService.cs" />
     <Compile Include="Services\IChampionDataService.cs" />
     <Compile Include="ViewModels\ChampionViewModel.cs" />
+    <Compile Include="ViewModels\DetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

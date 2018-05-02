@@ -1,14 +1,12 @@
-﻿using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
+using NewProject.Core.ViewModels;
 using Project.Core.Models;
 using Project.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Project.Core.ViewModels
 {
@@ -82,7 +80,7 @@ namespace Project.Core.ViewModels
             try
             {
                 Debug.WriteLine("navigating to detailview");
-                ShowViewModel<DetailViewModel>(new { championID = C.ID });
+                _navigationService.Navigate<DetailViewModel>();
                 Debug.WriteLine("navigation to detailview completed");
             }
             catch (Exception ex)

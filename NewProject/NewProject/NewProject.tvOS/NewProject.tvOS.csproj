@@ -4,12 +4,11 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectTypeGuids>{06FA79CB-D6CD-4721-BB4B-1BD202089C55};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{1DD0ED0E-58D8-47D6-968F-F4AE631202FD}</ProjectGuid>
+    <ProjectGuid>{A4141ED4-739A-41E8-B386-4EE7B3F97A9E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Project.tvOS</RootNamespace>
+    <RootNamespace>NewProject.tvOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Project.tvOS</AssemblyName>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AssemblyName>NewProject.tvOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,30 +76,13 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchProfiling>true</MtouchProfiling>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
-    <AppExtensionDebugBundleId />
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MvvmCross.Binding, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.tvOS\MvvmCross.Binding.dll</HintPath>
+    <Reference Include="MvvmCross, Version=6.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.6.0.1\lib\xamarintvos10\MvvmCross.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Binding.tvOS, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.tvOS\MvvmCross.Binding.tvOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Core, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Core.5.7.0\lib\Xamarin.tvOS\MvvmCross.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Localization, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Binding.5.7.0\lib\Xamarin.tvOS\MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.tvOS\MvvmCross.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.Platform.tvOS, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Platform.5.7.0\lib\Xamarin.tvOS\MvvmCross.Platform.tvOS.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmCross.tvOS, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Core.5.7.0\lib\Xamarin.tvOS\MvvmCross.tvOS.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\.nuget\packages\newtonsoft.json\10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -160,7 +142,9 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
@@ -170,35 +154,30 @@
   <ItemGroup>
     <Compile Include="CollectionViewSources\ChampionViewSource.cs" />
     <Compile Include="Converters\StringToImageConverter.cs" />
-    <Compile Include="Views\DetailView.cs" />
-    <Compile Include="Views\DetailView.designer.cs">
-      <DependentUpon>DetailView.cs</DependentUpon>
+    <Compile Include="Views\ChampionView.cs" />
+    <Compile Include="Views\ChampionView.designer.cs">
+      <DependentUpon>ChampionView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ChampionViewCell.cs" />
     <Compile Include="Views\ChampionViewCell.designer.cs">
       <DependentUpon>ChampionViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChampionView.cs" />
-    <Compile Include="Views\ChampionView.designer.cs">
-      <DependentUpon>ChampionView.cs</DependentUpon>
+    <Compile Include="Views\DetailView.cs" />
+    <Compile Include="Views\DetailView.designer.cs">
+      <DependentUpon>DetailView.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Main.storyboard">
-      <SubType>Designer</SubType>
-    </InterfaceDefinition>
+    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Project.Core\Project.Core.csproj">
-      <Project>{ccf5749d-14ab-458d-89e9-65b707484bab}</Project>
-      <Name>Project.Core</Name>
+    <ProjectReference Include="..\NewProject.Core\NewProject.Core.csproj">
+      <Project>{a46a04ed-8068-48fc-ab55-fd969915f624}</Project>
+      <Name>NewProject.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Aatrox.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\TVOS\Xamarin.TVOS.CSharp.targets" />
 </Project>
