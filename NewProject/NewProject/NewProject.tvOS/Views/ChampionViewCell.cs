@@ -45,7 +45,7 @@ namespace NewProject.tvOS
                 {
                     nameLabel = new UILabel
                     {
-                        TextColor = UIColor.Black,
+                        TextColor = UIColor.White,
                         TextAlignment = UITextAlignment.Center,
                         Font = UIFont.SystemFontOfSize(25)
 

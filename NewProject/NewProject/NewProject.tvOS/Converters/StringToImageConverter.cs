@@ -13,7 +13,8 @@ namespace NewProject.tvOS.Converters
         protected override UIImage Convert(string value, Type targetType, object parameter, CultureInfo culture)
         {
             return GetOnlineImage(value);
-        }
+            
+    }
 
         private UIImage GetOnlineImage(string uri)
         {

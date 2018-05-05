@@ -1,4 +1,5 @@
-﻿using MvvmCross.Commands;
+﻿using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using NewProject.Core.ViewModels;
@@ -7,6 +8,7 @@ using Project.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace Project.Core.ViewModels
 {
@@ -29,12 +31,10 @@ namespace Project.Core.ViewModels
                 RaisePropertyChanged(() => Champions);
             }
         }
-
-
-       
-
+        
 
         
+
         private readonly IMvxNavigationService _navigationService;
         protected readonly IChampionDataService _championDataService;
         public ChampionViewModel(IChampionDataService championDataService, IMvxNavigationService navigationService)
@@ -45,49 +45,39 @@ namespace Project.Core.ViewModels
            
 
             GetChampions();
-
-
-        }
-
-        public MvxCommand<Champion> NavigateToDetailCommand
-        {
-            get
-            {
-                //return new MvxCommand<Champion>(
-                //    selectedChampion =>
-                //    {
-                //        try
-                //        {
-                //            Debug.WriteLine("navigating to detailview");
-                //            _navigationService.Navigate<DetailViewModel>();
-                //            Debug.WriteLine("navigation to detailview completed");
-                //        }
-                //        catch (Exception ex)
-                //        {
-                //            Debug.WriteLine(ex.Message);
-                //        }
-
-                //        //ShowViewModel<DetailViewModel>(new { championID = selectedChampion.ID });
-                //    }
-                // );
-                return new MvxCommand<Champion>(NavigateDetail);
-            }
             
 
         }
-         public void NavigateDetail(Champion C)
+
+      
+
+        public MvxCommand<Champion> ChampionSelectedCommand
         {
-            try
+            get
             {
-                Debug.WriteLine("navigating to detailview");
-                _navigationService.Navigate<DetailViewModel>();
-                Debug.WriteLine("navigation to detailview completed");
+                return new MvxCommand<Champion>(
+                    selectedChampion =>
+                    {
+                        try
+                        {
+
+                            _navigationService.Navigate<DetailViewModel, Champion>(selectedChampion);
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine(ex.Message);
+                        }
+
+                        
+                    }
+                 );
+                
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
+
+
         }
+
 
 
         public void GetChampions()

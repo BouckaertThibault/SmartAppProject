@@ -2,6 +2,7 @@
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Tvos.Views;
 using NewProject.tvOS.CollectionViewSources;
+using NewProject.tvOS.Converters;
 using Project.Core.ViewModels;
 using System;
 using UIKit;
@@ -26,7 +27,7 @@ namespace NewProject.tvOS
                 base.ViewDidLoad();
                 _championViewSource = new ChampionViewSource(this.CollectionView);
                 NavigationItem.Title = "Champions";
-                CollectionView.BackgroundColor = UIColor.White;
+                
                 this.CollectionView.Source = _championViewSource;
                 this.CollectionView.ReloadData();
             }
@@ -39,7 +40,7 @@ namespace NewProject.tvOS
             set.Bind(_championViewSource).To(vm => vm.Champions);
             set.Bind(_championViewSource)
                     .For(src => src.SelectionChangedCommand)
-                    .To(vm => vm.NavigateToDetailCommand);
+                    .To(vm => vm.ChampionSelectedCommand);
 
             set.Apply();
 
