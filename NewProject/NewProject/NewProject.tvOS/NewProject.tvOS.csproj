@@ -76,6 +76,11 @@
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchProfiling>true</MtouchProfiling>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+    <EnvironmentVariables>
+    </EnvironmentVariables>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MvvmCross, Version=6.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.6.0.1\lib\xamarintvos10\MvvmCross.dll</HintPath>
@@ -154,6 +159,18 @@
     <Compile Include="CollectionViewSources\ChampionViewSource.cs" />
     <Compile Include="Converters\ChampionToBool.cs" />
     <Compile Include="Converters\StringToImageConverter.cs" />
+    <Compile Include="Views\DetailView2.cs" />
+    <Compile Include="Views\DetailView2.designer.cs">
+      <DependentUpon>DetailView2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailView3.cs" />
+    <Compile Include="Views\DetailView3.designer.cs">
+      <DependentUpon>DetailView3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TabsRootView.cs" />
+    <Compile Include="Views\TabsRootView.designer.cs">
+      <DependentUpon>TabsRootView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChampionView.cs" />
     <Compile Include="Views\ChampionView.designer.cs">
       <DependentUpon>ChampionView.cs</DependentUpon>

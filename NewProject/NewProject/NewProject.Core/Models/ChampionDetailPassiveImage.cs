@@ -11,7 +11,7 @@ namespace Project.Core.Models
         {
             get
             {
-                return "https://ddragon.leagueoflegends.com/cdn/8.6.1/img/pasive/" + url;
+                return "https://ddragon.leagueoflegends.com/cdn/8.6.1/img/passive/" + url;
             }
         }
     }

@@ -61,7 +61,7 @@ namespace Project.Core.ViewModels
                         try
                         {
 
-                            _navigationService.Navigate<DetailViewModel, Champion>(selectedChampion);
+                            _navigationService.Navigate<TabsRootViewModel, Champion>(selectedChampion);
 
                         }
                         catch (Exception ex)

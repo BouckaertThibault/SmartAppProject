@@ -24,11 +24,11 @@ namespace NewProject.tvOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel txtDescription { get; set; }
+        UIKit.UILabel lblName { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel txtName { get; set; }
+        UIKit.UILabel lblTitle { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -42,14 +42,14 @@ namespace NewProject.tvOS
                 imgBlur = null;
             }
 
-            if (txtDescription != null) {
-                txtDescription.Dispose ();
-                txtDescription = null;
+            if (lblName != null) {
+                lblName.Dispose ();
+                lblName = null;
             }
 
-            if (txtName != null) {
-                txtName.Dispose ();
-                txtName = null;
+            if (lblTitle != null) {
+                lblTitle.Dispose ();
+                lblTitle = null;
             }
         }
     }

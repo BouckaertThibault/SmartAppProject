@@ -1,19 +1,17 @@
-﻿using MvvmCross.Navigation;
+﻿using Foundation;
 using MvvmCross.ViewModels;
 using Project.Core.Models;
 using Project.Core.Services;
-using Project.Core.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
-using System.Threading.Tasks;
 using UIKit;
 
 namespace NewProject.Core.ViewModels
 {
-    public class DetailViewModel: MvxViewModel<ChampionDetail>
+    public class DetailView2Model: MvxViewModel<ChampionDetail>
     {
+
         private ChampionDetail _championDetail;
 
         public ChampionDetail ChampionDetail
@@ -30,24 +28,29 @@ namespace NewProject.Core.ViewModels
             }
         }
 
+
         protected readonly IChampionDataService _championDataService;
-        public DetailViewModel(IChampionDataService championDataService)
+        public DetailView2Model(IChampionDataService championDataService)
         {
 
             this._championDataService = championDataService;
-            
+           
         }
-
-
 
         
         public override void Prepare(ChampionDetail parameter)
         {
+            
             ChampionDetail = parameter;
         }
 
 
-        
-
+        public UIImage GetOnlineImage(string uri)
+        {
+            if (string.IsNullOrWhiteSpace(uri)) return null;
+            using (var url = new NSUrl(uri))
+            using (var data = NSData.FromUrl(url))
+                return UIImage.LoadFromData(data);
+        }
     }
 }

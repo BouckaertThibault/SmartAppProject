@@ -1,18 +1,13 @@
-﻿using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
+﻿using MvvmCross.ViewModels;
 using Project.Core.Models;
 using Project.Core.Services;
-using Project.Core.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
-using System.Threading.Tasks;
-using UIKit;
 
 namespace NewProject.Core.ViewModels
 {
-    public class DetailViewModel: MvxViewModel<ChampionDetail>
+    public class DetailView3Model: MvxViewModel<ChampionDetail>
     {
         private ChampionDetail _championDetail;
 
@@ -30,14 +25,14 @@ namespace NewProject.Core.ViewModels
             }
         }
 
+
         protected readonly IChampionDataService _championDataService;
-        public DetailViewModel(IChampionDataService championDataService)
+        public DetailView3Model(IChampionDataService championDataService)
         {
 
             this._championDataService = championDataService;
-            
-        }
 
+        }
 
 
         
@@ -45,9 +40,6 @@ namespace NewProject.Core.ViewModels
         {
             ChampionDetail = parameter;
         }
-
-
-        
 
     }
 }

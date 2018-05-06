@@ -11,7 +11,8 @@ using UIKit;
 namespace NewProject.tvOS
 {
     [MvxFromStoryboard(StoryboardName = "Main")]
-    [MvxChildPresentation]
+    //[MvxChildPresentation]
+    [MvxTabPresentation(WrapInNavigationController = true, TabIconName = "home", TabName = "Champion")]
     public partial class DetailView : MvxViewController<DetailViewModel>
     {
        
@@ -30,8 +31,8 @@ namespace NewProject.tvOS
                 
                 set.Bind(imgBackground).To(vm => vm.ChampionDetail.Image.backgroundImage).WithConversion<StringToImageConverter>();
                 
-                set.Bind(txtName).To(vm => vm.ChampionDetail.Name);
-                set.Bind(txtDescription).To(vm => vm.ChampionDetail.Lore);
+                set.Bind(lblName).To(vm => vm.ChampionDetail.Name);
+                set.Bind(lblTitle).To(vm => vm.ChampionDetail.Title);
                 
                 set.Apply();
             }
