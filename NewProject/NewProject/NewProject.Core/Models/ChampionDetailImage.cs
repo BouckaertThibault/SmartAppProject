@@ -12,6 +12,8 @@ namespace Project.Core.Models
         [JsonProperty("full")]
         public string url { get; set; }
 
+       
+
         public string backgroundImage
         {
             get
@@ -26,7 +28,7 @@ namespace Project.Core.Models
             get
             {
                 string newImage = url.Substring(0, url.Length - 4);
-                return "https://http://ddragon.leagueoflegends.com/cdn/8.6.1/img/champion/" + newImage + ".png";
+                return "https://http://ddragon.leagueoflegends.com/cdn/8.9.1/img/champion/" + newImage + ".png";
             }
         }
 
@@ -38,5 +40,9 @@ namespace Project.Core.Models
                 return "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + newImage + "_0.jpg";
             }
         }
+
+       
+
+
     }
 }

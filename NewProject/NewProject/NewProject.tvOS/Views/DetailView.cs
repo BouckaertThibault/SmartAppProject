@@ -11,7 +11,6 @@ using UIKit;
 namespace NewProject.tvOS
 {
     [MvxFromStoryboard(StoryboardName = "Main")]
-    //[MvxChildPresentation]
     [MvxTabPresentation(WrapInNavigationController = true, TabIconName = "home", TabName = "Champion")]
     public partial class DetailView : MvxViewController<DetailViewModel>
     {

@@ -14,8 +14,25 @@ namespace NewProject.tvOS
     [Register ("DetailView3")]
     partial class DetailView3
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView imgBackground { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UICollectionView SkinCollection { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (imgBackground != null) {
+                imgBackground.Dispose ();
+                imgBackground = null;
+            }
+
+            if (SkinCollection != null) {
+                SkinCollection.Dispose ();
+                SkinCollection = null;
+            }
         }
     }
 }

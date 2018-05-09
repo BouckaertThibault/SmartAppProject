@@ -42,6 +42,14 @@ namespace NewProject.tvOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIVisualEffectView imgBlur { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblSpellName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView lblSpellText { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (btnAbility1 != null) {
@@ -77,6 +85,16 @@ namespace NewProject.tvOS
             if (imgBlur != null) {
                 imgBlur.Dispose ();
                 imgBlur = null;
+            }
+
+            if (lblSpellName != null) {
+                lblSpellName.Dispose ();
+                lblSpellName = null;
+            }
+
+            if (lblSpellText != null) {
+                lblSpellText.Dispose ();
+                lblSpellText = null;
             }
         }
     }

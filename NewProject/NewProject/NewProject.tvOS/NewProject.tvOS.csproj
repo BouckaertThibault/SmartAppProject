@@ -157,15 +157,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionViewSources\ChampionViewSource.cs" />
+    <Compile Include="CollectionViewSources\SkinViewSource.cs" />
     <Compile Include="Converters\ChampionToBool.cs" />
     <Compile Include="Converters\StringToImageConverter.cs" />
-    <Compile Include="Views\DetailView2.cs" />
-    <Compile Include="Views\DetailView2.designer.cs">
-      <DependentUpon>DetailView2.cs</DependentUpon>
+    <Compile Include="Views\SkinViewCell.cs" />
+    <Compile Include="Views\SkinViewCell.designer.cs">
+      <DependentUpon>SkinViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailView3.cs" />
     <Compile Include="Views\DetailView3.designer.cs">
       <DependentUpon>DetailView3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailView2.cs" />
+    <Compile Include="Views\DetailView2.designer.cs">
+      <DependentUpon>DetailView2.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TabsRootView.cs" />
     <Compile Include="Views\TabsRootView.designer.cs">

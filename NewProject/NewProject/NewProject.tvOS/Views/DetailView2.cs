@@ -1,11 +1,16 @@
-﻿using Foundation;
+﻿using CoreGraphics;
+using Foundation;
+using MvvmCross.Base;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Tvos.Presenters.Attributes;
 using MvvmCross.Platforms.Tvos.Views;
+using MvvmCross.ViewModels;
+using NewProject.Core;
 using NewProject.Core.ViewModels;
 using NewProject.tvOS.Converters;
 using Project.Core.Models;
 using System;
+using System.Diagnostics;
 using UIKit;
 
 namespace NewProject.tvOS
@@ -19,6 +24,8 @@ namespace NewProject.tvOS
         {
         }
 
+       
+
         public override void ViewDidLoad()
         {
             try
@@ -28,13 +35,26 @@ namespace NewProject.tvOS
                 MvxFluentBindingDescriptionSet<DetailView2, DetailView2Model> set = this.CreateBindingSet<DetailView2, DetailView2Model>();
                 set.Bind(imgBackground).To(vm => vm.ChampionDetail.Image.backgroundImage).WithConversion<StringToImageConverter>();
 
+                set.Bind(lblSpellName).To(vm => vm.SpellName);
+                set.Bind(lblSpellText).To(vm => vm.SpellText);
+
+
+                
+
                 btnPassive.SetBackgroundImage(ViewModel.GetOnlineImage(ViewModel.ChampionDetail.Passive.Image.SpellImage), UIControlState.Normal);
+                set.Bind(btnPassive).To(vm => vm.ChangeTextCommand).CommandParameter("Passive"); 
                 btnAbility1.SetBackgroundImage(ViewModel.GetOnlineImage(ViewModel.ChampionDetail.Spells[0].Image.SpellImage), UIControlState.Normal);
+                set.Bind(btnAbility1).To(vm => vm.ChangeTextCommand).CommandParameter("Spell 1");
                 btnAbility2.SetBackgroundImage(ViewModel.GetOnlineImage(ViewModel.ChampionDetail.Spells[1].Image.SpellImage), UIControlState.Normal);
+                set.Bind(btnAbility2).To(vm => vm.ChangeTextCommand).CommandParameter("Spell 2");
                 btnAbility3.SetBackgroundImage(ViewModel.GetOnlineImage(ViewModel.ChampionDetail.Spells[2].Image.SpellImage), UIControlState.Normal);
+                set.Bind(btnAbility3).To(vm => vm.ChangeTextCommand).CommandParameter("Spell 3");
                 btnAbility4.SetBackgroundImage(ViewModel.GetOnlineImage(ViewModel.ChampionDetail.Spells[3].Image.SpellImage), UIControlState.Normal);
+                set.Bind(btnAbility4).To(vm => vm.ChangeTextCommand).CommandParameter("Spell 4");
 
-
+                
+               
+                
                 set.Apply();
             }
             catch (Exception ex)
@@ -42,9 +62,29 @@ namespace NewProject.tvOS
                 Console.Write(ex);
             }
 
-
-
         }
+        //public override void DidUpdateFocus(UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
+        //{
+        //    var previousItem = context.PreviouslyFocusedView as UIButton;
+        //    if (previousItem != null)
+        //    {
+
+        //        previousItem.Layer.BorderWidth = 0;
+        //        previousItem.Layer.BorderColor = UIColor.Clear.CGColor;
+
+        //    }
+
+        //    var nextItem = context.NextFocusedView as UIButton;
+        //    if (nextItem != null)
+        //    {
+
+        //        nextItem.Layer.BorderWidth = 10;
+        //        nextItem.Layer.BorderColor = UIColor.Red.CGColor;
+
+        //    }
+        //}
+
+       
 
     }
 }

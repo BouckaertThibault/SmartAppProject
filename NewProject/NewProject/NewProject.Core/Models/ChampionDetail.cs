@@ -12,11 +12,43 @@ namespace Project.Core.Models
         [JsonProperty("id")]
         public int ID { get; set; }
 
+        
+        private List<ChampionDetailSkins> _skins;
         [JsonProperty("skins")]
-        public List<ChampionDetailSkins> Skins { get; set; }
+        public List<ChampionDetailSkins> Skins {
+            get {
+                return _skins;
+            }
+            set {
+                _skins = value;
+                if(_skins != null && Image != null)
+                {
+                    foreach(ChampionDetailSkins skin in _skins)
+                    {
+                        skin.ImageName = Image.url;
+                    }
+                }
+            }
+        }
 
+        
+        private ChampionDetailImage _image;
         [JsonProperty("image")]
-        public ChampionDetailImage Image { get; set; }
+        public ChampionDetailImage Image {
+            get {
+                return _image;
+            }
+            set {
+                _image = value;
+                if(_image != null && Skins != null)
+                {
+                    foreach(ChampionDetailSkins skin in _skins)
+                    {
+                        skin.ImageName = Image.url;
+                    }
+                }
+            }
+        }
 
         [JsonProperty("lore")]
         public string Lore { get; set; }

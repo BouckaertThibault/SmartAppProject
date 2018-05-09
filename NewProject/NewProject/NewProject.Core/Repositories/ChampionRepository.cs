@@ -91,6 +91,7 @@ namespace Project.Core.Repositories
             {
                 Debug.WriteLine(ex.Message);
                 var filename = Path.Combine(documents, "championDetail" + ID + ".json");
+                
 
                 Debug.WriteLine("championDetail" + ID + ".json was leeg of bestaat niet, data ophalen en storen in file...");
                 using (HttpClient client = CreateHttpClient())
