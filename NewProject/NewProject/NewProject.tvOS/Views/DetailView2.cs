@@ -63,26 +63,7 @@ namespace NewProject.tvOS
             }
 
         }
-        //public override void DidUpdateFocus(UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
-        //{
-        //    var previousItem = context.PreviouslyFocusedView as UIButton;
-        //    if (previousItem != null)
-        //    {
-
-        //        previousItem.Layer.BorderWidth = 0;
-        //        previousItem.Layer.BorderColor = UIColor.Clear.CGColor;
-
-        //    }
-
-        //    var nextItem = context.NextFocusedView as UIButton;
-        //    if (nextItem != null)
-        //    {
-
-        //        nextItem.Layer.BorderWidth = 10;
-        //        nextItem.Layer.BorderColor = UIColor.Red.CGColor;
-
-        //    }
-        //}
+       
 
        
 

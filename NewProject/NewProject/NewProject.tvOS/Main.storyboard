@@ -32,7 +32,7 @@
                                             <rect key="frame" x="534" y="14" width="852" height="82"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                            <color key="textColor" colorSpace="calibratedRGB" red="0.96078431372549022" green="0.94901960784313721" blue="0.87450980392156863" alpha="1"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.88235294117647056" green="0.87058823529411766" blue="0.85490196078431369" alpha="1"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8018" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -40,7 +40,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                             <nil key="highlightedColor"/>
-                                            <color key="textColor" colorSpace="calibratedRGB" red="0.69019607843137254" green="0.71372549019607845" blue="0.69019607843137254" alpha="1"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.65098039215686276" green="0.61960784313725492" blue="0.51764705882352946" alpha="1"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
@@ -88,7 +88,7 @@
                             <outlet property="dataSource" destination="369" id="371"/>
                             <outlet property="delegate" destination="369" id="372"/>
                         </connections>
-                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.015686274509803921" green="0.066666666666666666" blue="0.10196078431372549" alpha="1"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.10980392156862745" green="0.13333333333333333" blue="0.16078431372549021" alpha="1"/>
                     </collectionView>
                     <connections/>
                 </collectionViewController>
@@ -176,8 +176,8 @@
                                             <rect key="frame" x="656" y="333" width="608" height="93"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                            <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" selectable="NO" id="15368" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" textAlignment="center">
                                             <rect key="frame" x="560" y="415" width="800" height="623"/>
@@ -186,7 +186,7 @@
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <color key="textColor" colorSpace="calibratedRGB" red="0.58823529411764708" green="0.611764705882353" blue="0.51764705882352946" alpha="1"/>
+                                            <color key="textColor" colorSpace="calibratedRGB" red="0.65098039215686276" green="0.61960784313725492" blue="0.51764705882352946" alpha="1"/>
                                         </textView>
                                     </subviews>
                                 </view>
@@ -267,4 +267,8 @@
             <point key="canvasLocation" x="1346" y="1153"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Content" width="1280" height="768"/>
+        <image name="Top Shelf Image" width="1920" height="720"/>
+    </resources>
 </document>
