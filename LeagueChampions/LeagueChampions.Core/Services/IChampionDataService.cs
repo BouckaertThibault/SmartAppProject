@@ -1,4 +1,5 @@
-﻿using Project.Core.Models;
+﻿using LeagueChampions.Core.Models;
+using Project.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Project.Core.Services
     public interface IChampionDataService
     {
         List<Champion> GetChampions();
-        ChampionDetail GetChampionById(int ID);
+        ChampionDetail GetChampionById(string name);
     }
 }

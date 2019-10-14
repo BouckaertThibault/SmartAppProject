@@ -10,7 +10,7 @@ namespace Project.Core.Models
     public class ChampionDetail
     {
         [JsonProperty("id")]
-        public int ID { get; set; }
+        public string ID { get; set; }
 
         
         private List<ChampionDetailSkins> _skins;

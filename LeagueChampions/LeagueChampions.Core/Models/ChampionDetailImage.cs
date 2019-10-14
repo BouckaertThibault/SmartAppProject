@@ -28,7 +28,7 @@ namespace Project.Core.Models
             get
             {
                 string newImage = url.Substring(0, url.Length - 4);
-                return "https://http://ddragon.leagueoflegends.com/cdn/8.9.1/img/champion/" + newImage + ".png";
+                return "https://ddragon.leagueoflegends.com/cdn/9.20.1/img/champion/" + newImage + ".png";
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using MvvmCross.Commands;
+﻿using LeagueChampions.Core.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using Project.Core.Models;
@@ -49,7 +50,7 @@ namespace NewProject.Core.ViewModels
             GetChampionById(parameter.ID);
         }
 
-        public void GetChampionById(int championID)
+        public void GetChampionById(string championID)
         {
             ChampionDetail = _championDataService.GetChampionById(championID);
 

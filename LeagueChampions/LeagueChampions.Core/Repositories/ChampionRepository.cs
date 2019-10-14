@@ -9,13 +9,16 @@ using System.Diagnostics;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.IO;
+using LeagueChampions.Core.Models;
 
 namespace Project.Core.Repositories
 {
     public class ChampionRepository : IChampionRepository
     {
-        private const string _BASEURL = "https://euw1.api.riotgames.com/lol/static-data/v3/champions";
-        private const string _API_KEY = "RGAPI-03bbb3ce-f67e-a1dd-9aa8-3579da119cfa";
+        //private const string _BASEURL = "https://euw1.api.riotgames.com/lol/static-data/v3/champions";
+        private const string _ALLCHAMPS = "https://ddragon.leagueoflegends.com/cdn/9.20.1/data/en_US/champion.json";
+        private const string _INDIVIDUAL_CHAMP = "https://ddragon.leagueoflegends.com/cdn/9.20.1/data/en_US/champion/";
+        private const string _API_KEY = "RGAPI-852ad88b-f462-474e-8bb9-fbeff81c4525";
         public string documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
 
@@ -51,11 +54,12 @@ namespace Project.Core.Repositories
             {
                 Debug.WriteLine(ex.Message);
                 var filename = Path.Combine(documents, "champions.json");
+                Debug.WriteLine("FILENAME: " + filename);
                 Debug.WriteLine("champions.json was leeg of bestaat niet, data ophalen en storen in file...");
                 using (HttpClient client = CreateHttpClient())
                 {
 
-                    var json = client.GetStringAsync(_BASEURL + "?locale=en_US&champListData=image&tags=image&dataById=false");
+                    var json = client.GetStringAsync(_ALLCHAMPS + "?locale=en_US&champListData=image&tags=image&dataById=false");
                     var r = json.Result;
 
 
@@ -68,21 +72,22 @@ namespace Project.Core.Repositories
         }
 
 
-        public ChampionDetail GetChampionById(int ID)
+        public ChampionDetail GetChampionById(string name)
         {
 
             try
             {
-                Debug.WriteLine("Lezen championDetail" + ID +".json...");
+                Debug.WriteLine("Lezen championDetail" + name +".json...");
                 
-                var filename = Path.Combine(documents, "championDetail" + ID +".json");
+                var filename = Path.Combine(documents, "championDetail" + name + ".json");
                 var text = File.ReadAllText(filename);
                 
-                Debug.WriteLine("championDetail" + ID + ".json gevonden, deze uitlezen...");
-                var finaalresultaat = JsonConvert.DeserializeObject<ChampionDetail>(text);
-                return finaalresultaat;
-                
+                Debug.WriteLine("championDetail" + name + ".json gevonden, deze uitlezen...");
 
+                var finaalresultaat = JsonConvert.DeserializeObject<ChampionDetailRoot>(text);
+                
+                var championdata = finaalresultaat.ChampionDetail.Values.ToList<ChampionDetail>();
+                return championdata[0];
 
             }
 
@@ -90,19 +95,22 @@ namespace Project.Core.Repositories
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                var filename = Path.Combine(documents, "championDetail" + ID + ".json");
+                var filename = Path.Combine(documents, "championDetail" + name + ".json");
                 
 
-                Debug.WriteLine("championDetail" + ID + ".json was leeg of bestaat niet, data ophalen en storen in file...");
+                Debug.WriteLine("championDetail" + name + ".json was leeg of bestaat niet, data ophalen en storen in file...");
                 using (HttpClient client = CreateHttpClient())
                 {
 
-                    var json = client.GetStringAsync(_BASEURL + "/" + ID + "?locale=en_US&champData=image&champData=info&champData=lore&champData=passive&champData=skins&champData=spells");
+                    var json = client.GetStringAsync(_INDIVIDUAL_CHAMP + name + ".json");
                     var r = json.Result;
 
                     File.WriteAllText(filename, r);
-                    var finaalresultaat = JsonConvert.DeserializeObject<ChampionDetail>(r);
-                    return finaalresultaat;
+
+                    var finaalresultaat = JsonConvert.DeserializeObject<ChampionDetailRoot>(r);
+
+                    var championdata = finaalresultaat.ChampionDetail.Values.ToList<ChampionDetail>();
+                    return championdata[0];
                 }
 
                 
