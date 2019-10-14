@@ -1,13 +1,13 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewProject.tvOS", "NewProject.tvOS\NewProject.tvOS.csproj", "{A4141ED4-739A-41E8-B386-4EE7B3F97A9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueChampions.tvOS", "LeagueChampions.tvOS\LeagueChampions.tvOS.csproj", "{A4141ED4-739A-41E8-B386-4EE7B3F97A9E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewProject.Core", "NewProject.Core\NewProject.Core.csproj", "{A46A04ED-8068-48FC-AB55-FD969915F624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueChampions.Core", "LeagueChampions.Core\LeagueChampions.Core.csproj", "{A46A04ED-8068-48FC-AB55-FD969915F624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewProject.Tests", "NewProject.Tests\NewProject.Tests.csproj", "{4053940D-9D76-431D-8D79-B7D93A23B7D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueChampions.Tests", "LeagueChampions.Tests\LeagueChampions.Tests.csproj", "{4053940D-9D76-431D-8D79-B7D93A23B7D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
